@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Fixes</title>
+</head>
+<body>
+    <h1>Test Results for Bug Fixes</h1>
+    
+    <h2>Issue 1: Item Ads - Missing dot after "Negotiable"</h2>
+    <p><strong>Problem:</strong> After "Negotiable" there should be a dot.</p>
+    <p><strong>Example before fix:</strong></p>
+    <code>Selling alphabet (G), Benefactor container and alphabet. Price: Negotiable</code>
+    <p><strong>Expected after fix:</strong></p>
+    <code>Selling alphabet (G), Benefactor container and alphabet. Price: Negotiable.</code>
+    <p><strong>Fix applied:</strong> Modified generateItemAd function to check finalPrice instead of combinedPriceText for dot placement.</p>
+    
+    <h2>Issue 2: Clothing Ads - Multiple "Negotiable" entries</h2>
+    <p><strong>Problem:</strong> When multiple clothing items have "Negotiable" prices, it shows "Negotiable, Negotiable and Negotiable"</p>
+    <p><strong>Example before fix:</strong></p>
+    <code>Buying Arm Pangel jacket, fur coat without a hood and Anti Social Club hoodie. Budget: Negotiable, Negotiable and Negotiable.</code>
+    <p><strong>Expected after fix:</strong></p>
+    <code>Buying Arm Pangel jacket, fur coat without a hood and Anti Social Club hoodie. Budget: Negotiable.</code>
+    <p><strong>Fix applied:</strong> Added logic to filter duplicate "Negotiable" entries when all prices are "Negotiable", keeping only one.</p>
+    
+    <h2>How to Test</h2>
+    <ol>
+        <li>Open index.html in your browser</li>
+        <li><strong>For Item Ads test:</strong>
+            <ul>
+                <li>Go to "Items Ads" section</li>
+                <li>Add items like "alphabet (G)", "Benefactor container", "alphabet"</li>
+                <li>Leave price fields empty (will default to "Negotiable")</li>
+                <li>Generate ad and verify it ends with "Negotiable."</li>
+            </ul>
+        </li>
+        <li><strong>For Clothing Ads test:</strong>
+            <ul>
+                <li>Go to "Clothing Ads" section</li>
+                <li>Add 3 clothing items like "Arm Pangel jacket", "fur coat without a hood", "Anti Social Club hoodie"</li>
+                <li>Leave all price fields empty (will default to "Negotiable")</li>
+                <li>Generate ad and verify it shows only one "Negotiable." at the end</li>
+            </ul>
+        </li>
+    </ol>
+    
+    <p><strong>Status:</strong> Both fixes have been implemented and are ready for testing.</p>
+</body>
+</html>

@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+    <meta name="description"
+        content="A suite of tools to instantly generate ads for cars, houses, items, businesses, work, and dating in Grand RP.">
+    <meta name="robots" content="noindex, nofollow, noarchive, nosnippet, noimageindex">
+    <meta name="copyright" content="© 2025 Grand RP Ads Generator Suite. All rights reserved.">
+    <meta name="author" content="Grand RP Ads Generator Suite">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Ads Generator</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+    <!-- Protection System -->
+    <script src="protection.js"></script>
+    <script src="security-runtime.js"></script>
+</head>
+
+<body class="protected-content no-inspect">
+    <!-- COPYRIGHT NOTICE - DO NOT REMOVE -->
+    <!--
+    =================================================================================
+    GRAND RP ADS GENERATOR SUITE
+    © 2025 - All Rights Reserved
+    
+    This software is protected by copyright law and international treaties.
+    Unauthorized reproduction or distribution of this software, or any portion 
+    of it, may result in severe civil and criminal penalties.
+    =================================================================================
+    -->
+    <!-- App Layout Container -->
+    <div class="app-layout">
+        <!-- Navigation -->
+        <nav class="main-nav">
+            <div class="nav-announcement">
+                <div class="nav-announcement__label">Announcement</div>
+                <div class="nav-announcement__marquee">
+                    <div class="nav-announcement__track">
+                        <span>Item and clothing Function enhanced</span>
+                        <span>Item and clothing Function enhanced</span>
+                    </div>
+                </div>
+            </div>
+
+            <a href="#cars" class="nav-link" data-page="car-ads-page">Car Ads</a>
+            <a href="#houses" class="nav-link" data-page="house-ads-page">House Ads</a>
+            <a href="#items" class="nav-link active" data-page="items-ads-page">Items & Clothing</a>
+            <a href="#business" class="nav-link" data-page="business-ads-page">Business Ads</a>
+            <a href="#other-ads" class="nav-link" data-page="other-ads-page">Other Ads</a>
+            <a href="#work" class="nav-link" data-page="work-ads-page">Work Ads</a>
+            <a href="#dating" class="nav-link" data-page="dating-ads-page">Dating Ads</a>
+            <a href="#manager" class="nav-link" data-page="manager-ads-page">Manager</a>
+
+            <a href="#" class="nav-link" id="logoutBtn"><i class="fas fa-sign-out-alt"></i> Logout</a>
+            <div class="theme-toggle" aria-label="Theme toggle">
+                <button id="themeToggle" class="theme-btn" title="Toggle Dark/Light Mode">
+                    <i class="fas fa-moon" id="themeIcon"></i>
+                </button>
+            </div>
+
+        </nav>
+
+        <!-- Main Content Area -->
+        <main class="main-content-scrollable">
+            <!-- PAGE: Car Ads -->
+            <div class="container page-content" id="car-ads-page">
+                <div class="header">
+                    <h1><i class="fas fa-car"></i> Car Ads Generator</h1>
+                    <p class="subtitle">Generate professional car trading ads instantly</p>
+                </div>
+                <div class="form-section">
+                    <!-- Car Name -->
+                    <div class="input-group">
+                        <label for="carName">Car Name</label>
+                        <div class="autocomplete-container">
+                            <input type="text" id="carName" placeholder="e.g., Truffade Chiron">
+                            <div class="autocomplete-suggestions" id="carNameSuggestions"></div>
+                        </div>
+                    </div>
+                    <!-- Transaction Type -->
+                    <div class="input-group">
+                        <label>Transaction Type</label>
+                        <div class="flex-group">
+                            <div class="button-group" style="flex:1;">
+                                <button type="button" class="toggle-btn car-transaction-btn active"
+                                    data-type="Selling">Selling</button>
+                                <button type="button" class="toggle-btn car-transaction-btn"
+                                    data-type="Buying">Buying</button>
+                            </div>
+                            <div class="checkbox-item flex-group">
+                                <input type="checkbox" id="carIsTrading">
+                                <label for="carIsTrading" style="padding: 12px 25px;">Trading?</label>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Trading Car Name -->
+                    <div class="input-group hidden" id="tradingCarNameGroup">
+                        <label for="tradingCarName">Car to Trade For</label>
+                        <div class="autocomplete-container">
+                            <input type="text" id="tradingCarName" placeholder="e.g., Alpha">
+                            <div class="autocomplete-suggestions" id="tradingCarNameSuggestions"></div>
+                        </div>
+                    </div>
+                    <!-- Extras -->
+                    <div class="input-group">
+                        <label>Extras</label>
+                        <div class="checkbox-grid">
+                            <div class="checkbox-item"><input type="checkbox" id="fullConfig"><label
+                                    for="fullConfig">Full Config</label></div>
+                            <div class="checkbox-item"><input type="checkbox" id="partialConfig"><label
+                                    for="partialConfig">Partial Config</label></div>
+                            <div class="checkbox-item"><input type="checkbox" id="visualUpgrades"><label
+                                    for="visualUpgrades">Visuals</label></div>
+                            <div class="checkbox-item"><input type="checkbox" id="carInsurance"><label
+                                    for="carInsurance">Insurance</label></div>
+                            <div class="checkbox-item"><input type="checkbox" id="tuningParts"><label
+                                    for="tuningParts">Tuning</label></div>
+                            <div class="checkbox-item"><input type="checkbox" id="turboKit"><label
+                                    for="turboKit">Turbo</label></div>
+                            <div class="checkbox-item"><input type="checkbox" id="driftKit"><label for="driftKit">Drift
+                                    Kit</label></div>
+                        </div>
+                    </div>
+                    <!-- Price -->
+                    <div class="input-group">
+                        <label for="carPrice" id="carPriceLabel">Price</label>
+                        <input type="text" id="carPrice" placeholder="e.g., 50m, 1b, 100k, or leave blank">
+                    </div>
+                    <!-- Output -->
+                    <div class="input-group">
+                        <label>Generated Ad</label>
+                        <div id="carOutput" class="output-area" readonly></div>
+                    </div>
+                    <!-- Actions -->
+                    <div class="action-buttons">
+                        <button type="button" id="carCopyBtn" class="action-btn btn-copy"
+                            style="background-color: #28a745; color: white;">Copy</button>
+                        <button type="button" id="carResetBtn" class="action-btn btn-reset"
+                            style="background-color: #dc3545; color: white;">Reset</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PAGE: House Ads -->
+            <div class="container page-content hidden" id="house-ads-page">
+                <div class="header">
+                    <h1><i class="fas fa-house-chimney"></i> House Ads Generator</h1>
+                    <p class="subtitle">Create the perfect ad for your in-game property</p>
+                </div>
+                <div class="form-section">
+                    <!-- Transaction Type -->
+                    <div class="input-group">
+                        <label>Transaction Type</label>
+                        <div class="button-group">
+                            <button type="button" class="toggle-btn house-transaction-btn active"
+                                data-type="Selling">Selling</button>
+                            <button type="button" class="toggle-btn house-transaction-btn"
+                                data-type="Buying">Buying</button>
+                            <button type="button" class="toggle-btn house-transaction-btn"
+                                data-type="Renting out">Renting out</button>
+                            <button type="button" class="toggle-btn house-transaction-btn"
+                                data-type="Looking to rent">Looking to rent</button>
+                        </div>
+                    </div>
+                    <!-- Property Type & Number -->
+                    <div class="input-group">
+                        <label>Property Type & Number</label>
+                        <!-- Property 1 -->
+                        <div class="grid-2-col">
+                            <select id="propertyTypeSelect">
+                                <option value="house">House</option>
+                                <option value="apartment">Apartment</option>
+                                <option value="mansion">Mansion</option>
+                                <option value="casino penthouse">Casino Penthouse</option>
+                            </select>
+                            <input type="text" id="propertyNumber" placeholder="№ 1 (Optional)">
+                        </div>
+                        <!-- Property 2 -->
+                        <div class="grid-2-col" style="margin-top: 8px;">
+                            <select id="propertyType2Select">
+                                <option value="">➕ Add 2nd Property</option>
+                                <option value="house">House</option>
+                                <option value="apartment">Apartment</option>
+                                <option value="mansion">Mansion</option>
+                                <option value="casino penthouse">Casino Penthouse</option>
+                            </select>
+                            <input type="text" id="propertyNumber2" placeholder="№ 2 (Optional)" class="hidden">
+                        </div>
+                    </div>
+                    <!-- Features -->
+                    <div class="input-group">
+                        <label>Features</label>
+                        <div class="grid-2-col">
+                            <div class="input-group">
+                                <label for="garageSpaceSelect">Garage Space</label>
+                                <select id="garageSpaceSelect">
+                                    <option value="">None</option>
+                                    <option value="2 g.s.">2 g.s.</option>
+                                    <option value="5 g.s.">5 g.s.</option>
+                                    <option value="9 g.s.">9 g.s.</option>
+                                    <option value="25 g.s.">25 g.s.</option>
+                                </select>
+                            </div>
+                            <div class="input-group">
+                                <label for="warehouseSpaceSelect">Warehouse Space</label>
+                                <select id="warehouseSpaceSelect">
+                                    <option value="">None</option>
+                                    <option value="3 w.h.">3 w.h.</option>
+                                    <option value="4 w.h.">4 w.h.</option>
+                                    <option value="5 w.h.">5 w.h.</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="checkbox-grid other-features">
+                            <div class="checkbox-item"><input type="checkbox" id="f_garden" data-text="a garden"><label
+                                    for="f_garden">Garden</label></div>
+                            <div class="checkbox-item"><input type="checkbox" id="f_custom"
+                                    data-text="custom interior"><label for="f_custom">Custom Interior</label></div>
+                            <div class="checkbox-item"><input type="checkbox" id="f_insurance"
+                                    data-text="insurance"><label for="f_insurance">Insurance</label></div>
+                            <div class="checkbox-item"><input type="checkbox" id="f_helipad" data-text="helipad"><label
+                                    for="f_helipad">Helipad</label></div>
+                            <div class="checkbox-item"><input type="checkbox" id="f_tennis"
+                                    data-text="tennis court"><label for="f_tennis">Tennis Court</label></div>
+                            <div class="checkbox-item"><input type="checkbox" id="f_driveway"
+                                    data-text="long driveway"><label for="f_driveway">Long Driveway</label></div>
+                            <div class="checkbox-item"><input type="checkbox" id="f_pool"
+                                    data-text="swimming pool"><label for="f_pool">Swimming Pool</label></div>
+                        </div>
+                    </div>
+                    <!-- Rent Period -->
+                    <div class="input-group hidden" id="rentPeriodGroup">
+                        <label for="rentPeriodSelect">Rent Period</label>
+                        <select id="rentPeriodSelect">
+                            <option value="">None</option>
+                            <option value="per day">Per Day</option>
+                            <option value="per week">Per Week</option>
+                            <option value="for 7 days">For 7 Days</option>
+                        </select>
+                    </div>
+                    <!-- View -->
+                    <div class="input-group">
+                        <label for="propertyView">View</label>
+                        <select id="propertyView">
+                            <option value="">None</option>
+                            <option value="a nice view">Nice view</option>
+                            <option value="a beautiful view">Beautiful view</option>
+                            <option value="an amazing view">Amazing view</option>
+                        </select>
+                    </div>
+                    <!-- Location -->
+                    <div class="input-group">
+                        <label for="location">Location</label>
+                        <div class="autocomplete-container">
+                            <input type="text" id="location" placeholder="e.g., in Vespucci Canals">
+                            <div class="autocomplete-suggestions" id="locationSuggestions"></div>
+                        </div>
+                    </div>
+                    <!-- Price -->
+                    <div class="input-group">
+                        <label for="housePrice" id="housePriceLabel">Price</label>
+                        <input type="text" id="housePrice" placeholder="e.g., 5k, 1.5m, or leave blank">
+                    </div>
+                    <!-- Output -->
+                    <div class="input-group">
+                        <label>Generated Ad</label>
+                        <div id="houseOutput" class="output-area" readonly></div>
+                    </div>
+                    <!-- Actions -->
+                    <div class="action-buttons">
+                        <button type="button" id="houseCopyBtn" class="action-btn btn-copy"
+                            style="background-color: #28a745; color: white;">Copy</button>
+                        <button type="button" id="houseResetBtn" class="action-btn btn-reset"
+                            style="background-color: #dc3545; color: white;">Reset</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PAGE: Items & Clothing Ads (Merged) -->
+            <div class="container page-content" id="items-ads-page">
+                <div class="header">
+                    <h1><i class="fas fa-box-open"></i> Items & Clothing Ads</h1>
+                    <p class="subtitle">Generate ads for items, clothing, and accessories</p>
+                </div>
+                <div class="form-section">
+                    <!-- Category Toggle -->
+                    <div class="input-group">
+                        <label>Category</label>
+                        <div class="button-group category-toggle">
+                            <button type="button" class="toggle-btn category-btn active" data-category="items">
+                                <i class="fas fa-box-open"></i> Items
+                            </button>
+                            <button type="button" class="toggle-btn category-btn" data-category="clothing">
+                                <i class="fas fa-shirt"></i> Clothing
+                            </button>
+                        </div>
+                    </div>
+                    <!-- Transaction Type -->
+                    <div class="input-group">
+                        <label>Transaction Type</label>
+                        <div class="flex-group">
+                            <div class="button-group" style="flex:1;">
+                                <button type="button" class="toggle-btn item-transaction-btn active"
+                                    data-type="Selling">Selling</button>
+                                <button type="button" class="toggle-btn item-transaction-btn"
+                                    data-type="Buying">Buying</button>
+                            </div>
+                            <div class="checkbox-item flex-group">
+                                <input type="checkbox" id="isTrading">
+                                <label for="isTrading" style="padding: 12px 25px;">Trading?</label>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Items Container -->
+                    <div class="input-group">
+                        <label id="itemsLabel">Items</label>
+                        <div id="itemsContainer">
+                            <!-- Item rows will be injected here -->
+                        </div>
+                        <div class="action-buttons" style="justify-content: center; width: 100%; margin-top: 15px;">
+                            <button type="button" id="add-item-btn" class="action-btn vibrant-add-btn">
+                                <i class="fas fa-plus"></i> Add Item
+                            </button>
+                        </div>
+                    </div>
+                    <!-- Pricing -->
+                    <div class="input-group">
+                        <label id="pricingLabel">Pricing</label>
+                        <div id="pricingContainer">
+                            <!-- Pricing inputs will be injected here -->
+                        </div>
+                        <div class="checkbox-grid" style="margin-top: 15px;">
+                            <div class="checkbox-item"><input type="checkbox" id="inBulk"><label for="inBulk">In
+                                    Bulk</label></div>
+                            <div class="checkbox-item"><input type="checkbox" id="respectively"><label
+                                    for="respectively">Respectively</label></div>
+                        </div>
+                    </div>
+                    <!-- Output -->
+                    <div class="input-group">
+                        <label>Generated Ad</label>
+                        <div id="itemOutput" class="output-area" readonly></div>
+                    </div>
+                    <!-- Actions -->
+                    <div class="action-buttons">
+                        <button type="button" id="itemCopyBtn" class="action-btn btn-copy"
+                            style="background-color: #28a745; color: white;">Copy</button>
+                        <button type="button" id="itemResetBtn" class="action-btn btn-reset"
+                            style="background-color: #dc3545; color: white;">Reset</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PAGE: Business Ads -->
+            <div class="container page-content hidden" id="business-ads-page">
+                <div class="header">
+                    <h1><i class="fas fa-store"></i> Business Ads Generator</h1>
+                    <p class="subtitle">Create ads for buying or selling businesses</p>
+                </div>
+                <div class="form-section">
+                    <!-- Transaction Type -->
+                    <div class="input-group">
+                        <label>Transaction Type</label>
+                        <div class="button-group">
+                            <button type="button" class="toggle-btn business-transaction-btn active"
+                                data-type="Buying">Buying</button>
+                            <button type="button" class="toggle-btn business-transaction-btn"
+                                data-type="Selling">Selling</button>
+                        </div>
+                    </div>
+                    <!-- Business Qualifiers -->
+                    <div class="input-group">
+                        <label>Business Qualifiers</label>
+                        <div class="checkbox-grid">
+                            <div class="checkbox-item"><input type="checkbox" id="isPrivate"><label for="isPrivate">A
+                                    private business</label></div>
+                            <div class="checkbox-item"><input type="checkbox" id="isFamily"><label for="isFamily">Family
+                                    business</label></div>
+                        </div>
+                    </div>
+                    <!-- Business Name -->
+                    <div class="input-group">
+                        <label for="businessName">Business Name</label>
+                        <div class="autocomplete-container">
+                            <input type="text" id="businessName" placeholder="e.g., Ammunition Store">
+                            <div class="autocomplete-suggestions" id="businessNameSuggestions"></div>
+                        </div>
+                    </div>
+                    <!-- Business Number -->
+                    <div class="input-group">
+                        <label for="businessNumber">Business Number (Optional)</label>
+                        <input type="text" id="businessNumber" placeholder="e.g., 27">
+                    </div>
+                    <!-- Location -->
+                    <div class="input-group">
+                        <label for="businessLocation">Location</label>
+                        <div class="autocomplete-container">
+                            <input type="text" id="businessLocation" placeholder="e.g., in Vinewood Hills">
+                            <div class="autocomplete-suggestions" id="businessLocationSuggestions"></div>
+                        </div>
+                    </div>
+                    <!-- Price -->
+                    <div class="input-group">
+                        <label for="businessPrice" id="businessPriceLabel">Budget</label>
+                        <input type="text" id="businessPrice" placeholder="e.g., 5m, 100k, or leave blank">
+                    </div>
+                    <!-- Output -->
+                    <div class="input-group">
+                        <label>Generated Ad</label>
+                        <div id="businessOutput" class="output-area"></div>
+                    </div>
+                    <!-- Actions -->
+                    <div class="action-buttons">
+                        <button type="button" id="businessCopyBtn" class="action-btn btn-copy"
+                            style="background-color: #28a745; color: white;">Copy</button>
+                        <button type="button" id="businessResetBtn" class="action-btn btn-reset"
+                            style="background-color: #dc3545; color: white;">Reset</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PAGE: Other Ads Generator -->
+            <div class="container page-content hidden other-page" id="other-ads-page">
+                <div class="header">
+                    <h1><i class="fas fa-glass-cheers"></i> Other Ads Generator</h1>
+                    <p class="subtitle">Party is live. Other categories are under construction.</p>
+                </div>
+                <div class="form-section">
+                    <div class="input-group">
+                        <label>Category</label>
+                        <div class="category-strip">
+                            <button type="button" class="toggle-btn other-category-btn"
+                                data-category="Racing">Racing</button>
+                            <button type="button" class="toggle-btn other-category-btn" data-category="Fight Club">Fight
+                                Club</button>
+                            <button type="button" class="toggle-btn other-category-btn active"
+                                data-category="Party">Party</button>
+                            <button type="button" class="toggle-btn other-category-btn" data-category="Arm Wrestle">Arm
+                                Wrestle</button>
+                            <button type="button" class="toggle-btn other-category-btn"
+                                data-category="Poker">Poker</button>
+                            <button type="button" class="toggle-btn other-category-btn"
+                                data-category="Beach Market">Beach Market</button>
+                            <button type="button" class="toggle-btn other-category-btn"
+                                data-category="License Plate">License Plate</button>
+                            <button type="button" class="toggle-btn other-category-btn" data-category="SIM Cards">SIM
+                                Cards</button>
+                            <button type="button" class="toggle-btn other-category-btn"
+                                data-category="Private Stall">Private Stall</button>
+                        </div>
+                    </div>
+                    <div id="otherAdsPartySection">
+                        <div class="input-group">
+                            <label>Event Type</label>
+                            <div class="button-group toggle-switch">
+                                <button type="button" class="toggle-btn other-toggle-btn active" data-mode="house">At
+                                    House</button>
+                                <button type="button" class="toggle-btn other-toggle-btn" data-mode="location">At
+                                    Location</button>
+                            </div>
+                        </div>
+                        <div class="input-group" id="houseInputGroup">
+                            <label for="partyHouseNumber">House Number</label>
+                            <input type="text" id="partyHouseNumber" placeholder="e.g. 562" inputmode="numeric"
+                                pattern="[0-9]*">
+                            <div id="partyValidationMessage" class="error-message hidden">Only numeric house numbers are
+                                allowed.</div>
+                        </div>
+                        <div class="input-group hidden" id="locationInputGroup">
+                            <label for="partyLocationSelect">Select Location</label>
+                            <div class="autocomplete-container" style="width: 100%;">
+                                <input type="text" id="partyLocationSelect" class="input-modern"
+                                    placeholder="Choose a location" autocomplete="off">
+                                <div id="partyLocationSuggestions" class="autocomplete-suggestions hidden"></div>
+                            </div>
+                        </div>
+                        <div class="preview-panel">
+                            <div class="preview-header">
+                                <span>Live Preview</span>
+                                <button type="button" id="partyCopyBtn" class="action-btn btn-copy disabled"
+                                    disabled>Copy Ad</button>
+                            </div>
+                            <div id="partyPreview" class="output-area preview-text">Party at house №???.</div>
+                        </div>
+                    </div>
+                    <div id="otherAdsUnderConstruction" class="other-construction hidden">
+                        <div class="other-construction__message">🚧 This category is under construction</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PAGE: Work Ads -->
+            <div class="container page-content hidden" id="work-ads-page">
+                <div class="header">
+                    <h1><i class="fas fa-briefcase"></i> Work Ads Generator</h1>
+                    <p class="subtitle">Generate and copy formatted job advertisements</p>
+                </div>
+                <div class="form-section">
+                    <!-- Work Category -->
+                    <div class="input-group">
+                        <label for="workCategory">Work Category</label>
+                        <div class="autocomplete-container">
+                            <input type="text" id="workCategory" placeholder="e.g., Looking for a job as a driver">
+                            <div class="autocomplete-suggestions" id="workCategorySuggestions"></div>
+                        </div>
+                    </div>
+                    <!-- Salary -->
+                    <div class="input-group">
+                        <label for="workSalary">Salary</label>
+                        <input type="text" id="workSalary" placeholder="e.g., 70k">
+                    </div>
+                    <!-- Payment Type -->
+                    <div class="input-group">
+                        <label>Payment Type</label>
+                        <div class="checkbox-grid">
+                            <div class="checkbox-item"><input type="checkbox" id="perDay"><label for="perDay">Per
+                                    Day</label></div>
+                            <div class="checkbox-item"><input type="checkbox" id="perHour"><label for="perHour">Per
+                                    Hour</label></div>
+                        </div>
+                    </div>
+                    <!-- Output -->
+                    <div class="input-group">
+                        <label>Generated Ad</label>
+                        <div id="workOutput" class="output-area"></div>
+                    </div>
+                    <!-- Actions -->
+                    <div class="action-buttons">
+                        <button type="button" id="workCopyBtn" class="action-btn btn-copy"
+                            style="background-color: #28a745; color: white;">Copy</button>
+                        <button type="button" id="workResetBtn" class="action-btn btn-reset"
+                            style="background-color: #dc3545; color: white;">Reset</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PAGE: Dating Ads -->
+            <div class="container page-content hidden" id="dating-ads-page">
+                <div class="header">
+                    <h1><i class="fas fa-heart"></i> Dating Ads Generator</h1>
+                    <p class="subtitle">Find who you're looking for</p>
+                </div>
+                <div class="form-section">
+                    <!-- Custom Select -->
+                    <div class="input-group">
+                        <label>What are you looking for?</label>
+                        <div class="custom-select-container" id="datingCustomSelect">
+                            <div class="select-button">
+                                <span id="datingSelectedValue">Select an option...</span>
+                                <i class="fas fa-chevron-down select-chevron"></i>
+                            </div>
+                            <div class="select-dropdown hidden">
+                                <div class="select-search">
+                                    <input type="text" id="datingSearchInput" placeholder="Search...">
+                                </div>
+                                <div class="select-options" id="datingOptionsContainer">
+                                    <!-- Options will be injected here -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Conditional Full Name Input -->
+                    <div class="input-group hidden" id="datingFullNameGroup">
+                        <label for="datingFullName">Enter full name</label>
+                        <input type="text" id="datingFullName" placeholder="e.g., Jane Doe">
+                    </div>
+                    <!-- Output -->
+                    <div class="input-group">
+                        <label>Generated Ad</label>
+                        <div id="datingOutput" class="output-area"></div>
+                    </div>
+                    <!-- Actions -->
+                    <div class="action-buttons">
+                        <button type="button" id="datingCopyBtn" class="action-btn btn-copy"
+                            style="background-color: #28a745; color: white;">Copy</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PAGE: Manager -->
+            <div class="container page-content hidden" id="manager-ads-page">
+                <div class="header">
+                    <h1><i class="fas fa-user-tie"></i> Manager Services</h1>
+                    <p class="subtitle">Select service categories, add items to cart, and copy the order summary.</p>
+                </div>
+                <div class="form-section">
+                    <div class="input-group">
+                        <label for="managerCategorySelect">Category</label>
+                        <select id="managerCategorySelect">
+                            <option value="individuals">Individuals</option>
+                            <option value="businesses">Businesses and Offices</option>
+                            <option value="long-term-clients">Long Term Clients</option>
+                            <option value="invaders">Invaders</option>
+                            <option value="state">State</option>
+                            <option value="political-parties">Political Parties</option>
+                            <option value="families">Families</option>
+                            <option value="parties">Parties</option>
+                            <option value="southside-influencers">Southside Influencers</option>
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <label for="managerSearchInput">Search Services</label>
+                        <input type="text" id="managerSearchInput" placeholder="Search services...">
+                    </div>
+                    <div class="input-group">
+                        <label id="managerServicesLabel" class="hidden">Available Services</label>
+                        <div id="managerServicesList" class="service-list"></div>
+                    </div>
+                    <div class="input-group">
+                        <label>Selected Services</label>
+                        <div id="managerCart" class="cart-list"></div>
+                        <div class="cart-summary">
+                            <div class="cart-summary-row"><span>Subtotal</span><span id="managerSubtotal">$0</span>
+                            </div>
+                            <div class="cart-summary-row"><span>Tax (3%)</span><span id="managerTax">$0</span></div>
+                            <div class="cart-summary-row total-row"><span>Total with Tax</span><span
+                                    id="managerTotal">$0</span></div>
+                        </div>
+                    </div>
+                    <div class="input-group">
+                        <label for="managerBankAccountInput">Bank Account Number</label>
+                        <input type="text" id="managerBankAccountInput" value="54011"
+                            placeholder="Enter bank account number" />
+                    </div>
+                    <div class="input-group">
+                        <label>Order Output</label>
+                        <div id="managerOrderOutput" class="output-area">Your order summary will appear here.</div>
+                    </div>
+                    <div class="action-buttons">
+                        <button type="button" id="managerCopyBtn" class="action-btn btn-copy"
+                            style="background-color: #28a745; color: white;">Copy</button>
+                        <button type="button" id="managerResetBtn" class="action-btn btn-reset"
+                            style="background-color: #dc3545; color: white;">Reset</button>
+                    </div>
+                </div>
+            </div>
+
+        </main>
+    </div>
+
+
+
+    <!-- Login Overlay -->
+    <div id="loginOverlay" class="login-overlay">
+        <div class="login-card" id="userLoginCard">
+            <div class="login-header">
+                <i class="fas fa-shield-halved login-logo"></i>
+                <h2>Secure Access</h2>
+                <p>Authentication Required</p>
+            </div>
+            <div class="login-form">
+                <div class="input-group">
+                    <label for="loginUser"><i class="fas fa-user"></i> Username</label>
+                    <input type="text" id="loginUser" placeholder="Username" autocomplete="username">
+                </div>
+                <div class="input-group">
+                    <label for="loginPass"><i class="fas fa-lock"></i> Password</label>
+                    <input type="password" id="loginPass" placeholder="Password" autocomplete="current-password">
+                </div>
+                <button type="button" id="loginBtn" class="login-btn">Login</button>
+                <div id="loginError" class="login-error hidden">Invalid username or password</div>
+            </div>
+            <div class="login-footer">
+                <p>© 2025 Grand RP Ads Generator Suite</p>
+            </div>
+        </div>
+    </div>
+    <script src="scripts.js"></script>
+</body>
+
+</html>

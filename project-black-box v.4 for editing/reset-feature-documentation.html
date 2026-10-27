@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reset Feature Documentation</title>
+</head>
+<body>
+    <h1>🎉 New Feature: Auto-Reset on Copy</h1>
+    
+    <h2>Feature Overview</h2>
+    <p>Added automatic form reset functionality when clicking the <strong>Copy</strong> button in Car Ads and House Ads sections.</p>
+    
+    <h2>How It Works</h2>
+    <p>When you click the "Copy" button in either Car Ads or House Ads:</p>
+    <ol>
+        <li>The generated ad is copied to your clipboard</li>
+        <li><strong>The form automatically resets</strong> to default values</li>
+        <li>You can immediately start creating a new ad</li>
+    </ol>
+    
+    <h2>Sections Affected</h2>
+    
+    <h3>🚗 Car Ads</h3>
+    <p><strong>What gets reset:</strong></p>
+    <ul>
+        <li>Car Name input field → cleared</li>
+        <li>Trading Car Name input field → cleared</li>
+        <li>Price/Budget input field → cleared</li>
+        <li>All checkboxes (Trading, Full Config, Partial Config, Visuals, Insurance, Tuning, Turbo, Drift Kit) → unchecked</li>
+        <li>Transaction type → reset to "Buying"</li>
+        <li>Price label → reset to "Budget"</li>
+        <li>Trading car name section → hidden</li>
+        <li>Output area → displays placeholder message</li>
+    </ul>
+    
+    <h3>🏠 House Ads</h3>
+    <p><strong>What gets reset:</strong></p>
+    <ul>
+        <li>Property Type → reset to "House"</li>
+        <li>Property Number → cleared</li>
+        <li>Garage Space → reset to "None"</li>
+        <li>Warehouse Space → reset to "None"</li>
+        <li>Rent Period → reset to "None"</li>
+        <li>View → reset to "None"</li>
+        <li>Location input → cleared</li>
+        <li>Price input → cleared</li>
+        <li>All feature checkboxes (Garden, Custom Interior, Insurance, etc.) → unchecked</li>
+        <li>Transaction type → reset to "Selling"</li>
+        <li>Price label → reset to "Price"</li>
+        <li>Rent period section → hidden</li>
+        <li>Output area → displays placeholder message</li>
+    </ul>
+    
+    <h2>Benefits</h2>
+    <ul>
+        <li>⚡ <strong>Faster workflow</strong> - No need to manually clear fields</li>
+        <li>🎯 <strong>Prevents errors</strong> - Clean slate for each new ad</li>
+        <li>📋 <strong>Better user experience</strong> - Copy and immediately start fresh</li>
+        <li>🔄 <strong>Consistent behavior</strong> - Predictable reset behavior</li>
+    </ul>
+    
+    <h2>Other Sections</h2>
+    <p><strong>Note:</strong> Items Ads and Clothing Ads already had reset functionality:</p>
+    <ul>
+        <li><strong>Items Ads:</strong> Has a separate "Clear Form" button</li>
+        <li><strong>Clothing Ads:</strong> Already resets on copy (implemented previously)</li>
+    </ul>
+    
+    <h2>Implementation Details</h2>
+    <p>The feature was implemented by:</p>
+    <ol>
+        <li>Creating <code>resetCarForm()</code> and <code>resetHouseForm()</code> functions</li>
+        <li>Modifying the copy button event listeners to call these reset functions after successful copy</li>
+        <li>Using the existing <code>copyToClipboard()</code> utility which accepts a callback parameter</li>
+    </ol>
+    
+    <h2>Testing Instructions</h2>
+    <h3>Test Car Ads Reset:</h3>
+    <ol>
+        <li>Go to Car Ads section</li>
+        <li>Fill in car name, select extras, enter price</li>
+        <li>Generate an ad</li>
+        <li>Click "Copy" button</li>
+        <li>Verify all fields are reset to defaults</li>
+    </ol>
+    
+    <h3>Test House Ads Reset:</h3>
+    <ol>
+        <li>Go to House Ads section</li>
+        <li>Change property type, add features, enter location/price</li>
+        <li>Generate an ad</li>
+        <li>Click "Copy" button</li>
+        <li>Verify all fields are reset to defaults</li>
+    </ol>
+    
+    <p><strong>Status:</strong> ✅ Feature implemented and ready for testing!</p>
+</body>
+</html>
